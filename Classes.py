@@ -37,15 +37,12 @@ def escolher_classe():
 
     print("\n=== Escolha a Classe do Personagem ===")
     for k, v in classes_disponiveis.items():
-
-
-        temp = v()
-        print(f"{k} - {temp.nome}")
+        clas = v()
+        print(f"{k} - {clas.nome}")
 
     while True:
         escolha = input("Digite o número da classe escolhida: ")
         if escolha in classes_disponiveis:
-            instancia = classes_disponiveis[escolha]() 
-            return instancia.nome 
+            return classes_disponiveis[escolha]()
         else:
             print("Opção inválida! Tente novamente.")

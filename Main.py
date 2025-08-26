@@ -22,8 +22,14 @@ def main():
         print("Escolha inválida!")
         return
     
-    personagem.set_raca(escolher_raca())
-    personagem.set_classe(escolher_classe())
+    raca_escolhida = escolher_raca()
+    classe_escolhida = escolher_classe()
+
+    personagem.set_raca(raca_escolhida.nome)
+    personagem.set_classe(classe_escolhida.nome)
+
+    habilidades_totais = raca_escolhida.habilidades + classe_escolhida.habilidades
+    personagem.set_habilidades(habilidades_totais)
 
     print("\n=== Atributos finais do personagem ===")
     personagem.mostrarPersonagem()

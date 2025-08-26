@@ -95,18 +95,16 @@ def escolher_raca():
 
     print("\n=== Escolha a Raça do Personagem ===")
     for k, v in racas_disponiveis.items():
-
-
-        temp = v()
-        print(f"{k} - {temp.nome}")
+        rac = v()
+        print(f"{k} - {rac.nome}")
 
     while True:
         escolha = input("Digite o número da raça escolhida: ")
         if escolha in racas_disponiveis:
-            instancia = racas_disponiveis[escolha]() 
-            return instancia.nome 
+            return racas_disponiveis[escolha]()
         else:
             print("Opção inválida! Tente novamente.")
+
 
 
 
