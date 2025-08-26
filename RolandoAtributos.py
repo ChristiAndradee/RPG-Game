@@ -1,6 +1,8 @@
 import random
 from Personagem import Personagem
 
+ordem = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
+
 #
 def lancaDados(qtdDados):
 
@@ -25,11 +27,31 @@ def lancaDados(qtdDados):
     print("Total dos dados:", totalDados,"\n\n")
     return atributo, totalDados
 
+def distribuir_valores(resultados):
+
+    atributos = {}
+    print("\nSeus resultados foram:", resultados)
+
+    for atr in ordem:
+        while True:
+            try:
+                escolha = int(input(f"Escolha um valor para {atr}: "))
+                if escolha in resultados:
+                    atributos[atr] = escolha
+                    resultados.remove(escolha)
+                    break
+                else:
+                    print("Valor inválido ou já usado. Tente novamente.")
+            except ValueError:
+                print("Digite um número válido.")
+
+    return atributos
+
 
 def estilo_classico(nome):
     print("\n=== Estilo Clássico ===")
     atributos = {}
-    ordem = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
+
 
     for atr in ordem:
         resultado, total = lancaDados(3)
@@ -42,27 +64,29 @@ def estilo_classico(nome):
 
 def estilo_aventureiro(nome):
     print("\n=== Estilo Aventureiro ===")
-    atributos = {}
-    ordem = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
-
-    for atr in ordem:
-        resultado, total = lancaDados(6)
-        # simplificação: média arredondada
-        atributos[atr] = round(total / len(resultado))
     
+    resultados = []
+    for _ in range(6):
+        resultado, total = lancaDados(3)
+        resultados.append(total)
+
+    atributos = distribuir_valores(resultados)
     personagem = Personagem(nome)
+    personagem.atribuir(atributos)
     return personagem
+
 
 
 def estilo_heroico(nome):
     print("\n=== Estilo Heroico ===")
-    atributos = {}
-    ordem = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
 
-    for atr in ordem:
+    # 6 lançamentos de 4 dados
+    resultados = []
+    for _ in range(6):
         resultado, total = lancaDados(4)
-        atributos[atr] = total
-    
+        resultados.append(total)
+
+    atributos = distribuir_valores(resultados)
     personagem = Personagem(nome)
     personagem.atribuir(atributos)
     return personagem

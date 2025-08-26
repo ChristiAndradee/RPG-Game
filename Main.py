@@ -1,5 +1,6 @@
 from Personagem import Personagem
 import RolandoAtributos
+from Raca import escolher_raca
 
 def main(): 
     nome = input("Digite seu nome: ")
@@ -19,6 +20,9 @@ def main():
     else:
         print("Escolha inválida!")
         return
+    
+    
+    personagem.set_raca(escolher_raca())
 
     print("\n=== Atributos finais do personagem ===")
     personagem.mostrarPersonagem()

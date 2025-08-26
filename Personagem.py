@@ -3,6 +3,7 @@
 class Personagem:
 
     def __init__(self, nome):
+        self.__raca = ""
         self.__nome = nome
         self.__forca = 0
         self.__destreza = 0
@@ -34,6 +35,9 @@ class Personagem:
     def get_carisma(self):
         return self.__carisma
     
+    def get_raca(self):
+        return self.__raca
+    
     #Setters
     
     def set_nome(self, def_nome):
@@ -57,6 +61,9 @@ class Personagem:
     def set_carisma(self, def_carisma):
          self.__carisma = def_carisma
 
+    def set_raca(self, def_raca):
+         self.__raca = def_raca
+
     def atribuir(self, atributos):
          self.__forca = atributos["Força"]
          self.__destreza = atributos["Destreza"]
@@ -67,6 +74,7 @@ class Personagem:
 
     def mostrarPersonagem(self):
         print(f"\nNome: {self.get_nome()}")
+        print(f"\nRaca: {self.get_raca()}")
         print(f"\nForça: {self.get_forca()}")
         print(f"Destreza: {self.get_destreza()}")
         print(f"Constituição: {self.get_constituicao()}")
