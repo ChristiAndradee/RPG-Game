@@ -4,6 +4,7 @@ class Personagem:
 
     def __init__(self, nome):
         self.__raca = ""
+        self.__classe = ""
         self.__nome = nome
         self.__forca = 0
         self.__destreza = 0
@@ -11,6 +12,7 @@ class Personagem:
         self.__inteligencia = 0
         self.__sabedoria = 0
         self.__carisma = 0
+        self.__habilidades = ""
 
     #Getters
 
@@ -38,6 +40,12 @@ class Personagem:
     def get_raca(self):
         return self.__raca
     
+    def get_classe(self):
+        return self.__classe
+    
+    def get_habilidades(self):
+        return self.__habilidades
+    
     #Setters
     
     def set_nome(self, def_nome):
@@ -64,6 +72,12 @@ class Personagem:
     def set_raca(self, def_raca):
          self.__raca = def_raca
 
+    def set_classe(self, def_classe):
+         self.__classe = def_classe
+
+    def set_habilidades(self, def_habilidades):
+         self.__habilidades = def_habilidades
+
     def atribuir(self, atributos):
          self.__forca = atributos["Força"]
          self.__destreza = atributos["Destreza"]
@@ -75,10 +89,12 @@ class Personagem:
     def mostrarPersonagem(self):
         print(f"\nNome: {self.get_nome()}")
         print(f"\nRaca: {self.get_raca()}")
+        print(f"Classe: {self.get_classe()}")
         print(f"\nForça: {self.get_forca()}")
         print(f"Destreza: {self.get_destreza()}")
         print(f"Constituição: {self.get_constituicao()}")
         print(f"Inteligência: {self.get_inteligencia()}")
         print(f"Sabedoria: {self.get_sabedoria()}")
-        print(f"Carisma: {self.get_carisma()}\n")
+        print(f"Carisma: {self.get_carisma()}")
+        print(f"\nHabilidades: {self.get_habilidades()}\n")
 
