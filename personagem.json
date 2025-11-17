@@ -1,0 +1,21 @@
+{
+    "_Personagem__raca": "Halfling",
+    "_Personagem__classe": "Ranger",
+    "_Personagem__nome": "Chris",
+    "_Personagem__forca": 12,
+    "_Personagem__destreza": 11,
+    "_Personagem__constituicao": 13,
+    "_Personagem__inteligencia": 11,
+    "_Personagem__sabedoria": 7,
+    "_Personagem__carisma": 14,
+    "_Personagem__habilidades": [
+        "Furtivo",
+        "Destemido",
+        "Bons de Mira",
+        "Pequenos",
+        "Restrições",
+        "Companheiro Animal",
+        "Explorador",
+        "Arqueiria"
+    ]
+}

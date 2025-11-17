@@ -2,6 +2,7 @@ from Personagem import Personagem
 import RolandoAtributos
 from Raca import escolher_raca
 from Classes import escolher_classe
+from utils.json_utils import salvar_personagem   # ou from utils.json_utils import salvar_personagem
 
 def main(): 
     nome = input("Digite seu nome: ")
@@ -33,6 +34,9 @@ def main():
 
     print("\n=== Atributos finais do personagem ===")
     personagem.mostrarPersonagem()
+
+    # 🔵 SALVAR EM JSON AQUI (DENTRO DO main)
+    salvar_personagem(personagem)
 
 if __name__ == "__main__":
     main()
